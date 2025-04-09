@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDEN MEDIA UGANDA</title>
+    <style>
+        /* Ninjapromo-inspired CSS with vibrant colors and modern design */
+        :root {
+            --primary: #6C3483;
+            --secondary: #1ABC9C;
+            --accent: #E74C3C;
+            --dark: #2C3E50;
+            --light: #ECF0F1;
+            --highlight: #F39C12;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/eden\ media\ logo.png');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            max-width: 8000px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .service-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-img {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-content h2 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--secondary);
+            font-size: 20px;
+        }
+        
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.2);
+        }
+        
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-col p {
+            margin-bottom: 15px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-img {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                height: 70vh;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 12px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/eden media logo 2.png" alt="Your Company Logo" width="100" height="auto">
+                EDEN <span>MEDIA</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content fade-in">
+            <h1>Creative Media Solutions in Kyenjojo</h1>
+            <p>Professional videography, photography, printing, branding and more to bring your ideas to life</p>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in delay-1">
+                    <div class="service-img">
+                        <img src="images/videography.jpg" alt="Videography">
+                    </div>
+                    <div class="service-content">
+                        <h3>Videography</h3>
+                        <p>Professional video production for weddings, events, commercials and more. High-quality equipment and editing.</p>
+                        <a href="#contact" class="btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="service-card fade-in delay-2">
+                    <div class="service-img">
+                        <img src="images/pic 1.jpg" alt="Photography">
+                    </div>
+                    <div class="service-content">
+                        <h3>Photography</h3>
+                        <p>Stunning photography services including portraits, events, products and passport photos.</p>
+                        <a href="#contact" class="btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="service-card fade-in delay-3">
+                    <div class="service-img">
+                        <img src="images/printer.jpg" alt="Printing">
+                    </div>
+                    <div class="service-content">
+                        <h3>Printing Services</h3>
+                        <p>High-quality printing, typing, express passport photos and document services for all your needs.</p>
+                        <a href="#contact" class="btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="service-card fade-in delay-1">
+                    <div class="service-img">
+                        <img src="images/heat press.jpg" alt="Branding">
+                    </div>
+                    <div class="service-content">
+                        <h3>Branding & T-Shirt Printing</h3>
+                        <p>Custom branding solutions including logo design, business cards, and high-quality t-shirt printing.</p>
+                        <a href="#contact" class="btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="service-card fade-in delay-2">
+                    <div class="service-img">
+                        <img src="images/graphics.jpg" alt="Graphics Design">
+                    </div>
+                    <div class="service-content">
+                        <h3>Graphics Design</h3>
+                        <p>Creative graphic design services for posters, flyers, banners and all your visual communication needs.</p>
+                        <a href="#contact" class="btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="service-card fade-in delay-3">
+                    <div class="service-img">
+                        <img src="images/music and movie.jpg" alt="Media Store">
+                    </div>
+                    <div class="service-content">
+                        <h3>Music & Movie Store</h3>
+                        <p>Wide selection of the latest music and movies plus accessories for all your entertainment needs.</p>
+                        <a href="#contact" class="btn">Visit Store</a>
+                    </div>
+                </div>
+                <div class="service-card fade-in delay-2">
+                    <div class="service-img">
+                        <img src="images/accessories.png" alt="accessories">
+                    </div>
+                    <div class="service-content">
+                        <h3>Accessories</h3>
+                        <p>At Eden Media, we don’t just offer top-quality products — we also bring you a curated selection of accessories designed to complement your lifestyle..</p>
+                        <a href="#contact" class="btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container about-container">
+            <div class="about-content fade-in">
+                <h2>About Eden Media Uganda</h2>
+                <p>Located in Kyenjojo District, Rugomebe Town Council, Nyamabuga Trading Centre, Eden Media Uganda is your one-stop creative media solutions provider.</p>
+                <p>Founded with a passion for creativity and excellence, we offer a comprehensive range of services to meet all your media and printing needs. Our team of professionals is dedicated to delivering high-quality results that exceed expectations.</p>
+                <p>Whether you need professional photography for your special event, custom branding for your business, or quality printing services, Eden Media has you covered.</p>
+                <a href="#contact" class="btn">Learn More</a>
+            </div>
+            <div class="about-img fade-in delay-1">
+                <img src="images/office.jpg" alt="Eden Media Uganda">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info fade-in delay-1">
+                    <h3>Get In Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Nyamabuga Trading Centre, Rugomebe Town Council, Kyenjojo District</p>
+                    <p><i class="fas fa-phone"></i> +256 773 535 109 (WhatsApp)</p>
+                    <p><i class="fas fa-phone"></i> +256 750 390 432 (WhatsApp)</p>
+                    <p><i class="fas fa-envelope"></i> edenmedia@gmail.com</p>
+                    <p><i class="fab fa-twitter"></i> @edenmedia</p>
+                    
+                    <h3 style="margin-top: 30px;">Business Hours</h3>
+                    <p><i class="far fa-clock"></i> Monday - Sunday: 8:00 AM - 10:00 PM</p>
+                    
+                    <div class="social-links" style="margin-top: 30px;">
+                        <a href="https://wa.me/256773535109" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://twitter.com/edenmedia" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="mailto:edenmedia@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form fade-in delay-2">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
+                                <option value="">Select a service</option>
+                                <option value="videography">Videography</option>
+                                <option value="photography">Photography</option>
+                                <option value="passport-photos">Express Passport Photos</option>
+                                <option value="typing-printing">Typing and Printing</option>
+                                <option value="branding">Branding & T-Shirt Printing</option>
+                                <option value="graphics-design">Graphics Design</option>
+                                <option value="jersey-printing">Jersey Printing</option>
+                                <option value="media-store">Music & Movie Store</option>
+                                <option value="accessories">Accessories</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Eden Media</h3>
+                    <p>Your trusted partner for creative media solutions in Kyenjojo District. Quality services at affordable prices.</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Nyamabuga Trading Centre, Rugomebe Town Council</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#home" style="color: white; text-decoration: none;">Home</a></li>
+                        <li><a href="#services" style="color: white; text-decoration: none;">Services</a></li>
+                        <li><a href="#about" style="color: white; text-decoration: none;">About Us</a></li>
+                        <li><a href="#contact" style="color: white; text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul style="list-style: none;">
+                        <li>Videography</li>
+                        <li>Photography</li>
+                        <li>Printing Services</li>
+                        <li>Branding & Design</li>
+                        <li>Media Store</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +256 773 535 109</p>
+                    <p><i class="fas fa-phone"></i> +256 750 390 432</p>
+                    <p><i class="fas fa-envelope"></i> edenmedia@gmail.com</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/256773535109" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://twitter.com/edenmedia" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="mailto:edenmedia@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Eden Media Uganda. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send this data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you, ${name}! Your message about ${service} has been received. We'll contact you soon at ${email} or ${phone}.`);
+            
+            // Reset the form
+            this.reset();
+        });
+        
+        // Animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = function() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Initialize elements as invisible
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+        
+        // Check on scroll
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+    </script>
+</body>
+</html>
